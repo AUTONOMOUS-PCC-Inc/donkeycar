@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://raw.githubusercontent.com/AUTONOMOUS-PCC-Inc/.github/main/mirrors/assets/donkeycar-banner.svg" alt="donkeycar dependency mirror — pinned at d60dcb5e, 2,185 commits, behavior cloning from camera image to steering and throttle" width="100%">
+
 ### 교육 과정이 개인 계정에 매달리지 않도록, 그대로 복제해 둔 저장소.
 
 AUTONOMOUS PCC의 자율주행 교육 과정이 서브모듈로 **고정(pin)** 해 쓰는<br>
@@ -13,23 +15,6 @@ AUTONOMOUS PCC의 자율주행 교육 과정이 서브모듈로 **고정(pin)** 
 ![License](https://img.shields.io/badge/License-MIT-A3A3A3?style=for-the-badge)
 
 [**왜 있나**](#왜-이-저장소가-있나) · [**출처**](#출처) · [**어떻게 쓰이나**](#어떻게-쓰이나) · [**하지 말 것**](#하지-말-것) · [**원본 문서**](#원본-문서) · [**라이선스**](#라이선스)
-
-<br>
-
-```
-autorope/donkeycar                 원본 (upstream)
-        │  fork
-        ▼
-YUNSUNGWOONG/donkeycar             강사 개인 포크
-        │  git push --mirror  ·  2026-10-10
-        ▼
-AUTONOMOUS-PCC-Inc/donkeycar       ← 이 저장소
-        │  서브모듈로 SHA 고정
-        ▼
-aypi-car-tutorial                  바이브코딩 캠프 실습 저장소
-```
-
-<sub>전체 이력 <strong>2,185 커밋</strong>을 그대로 복제했습니다. 파일 216개, 변경 없음.</sub>
 
 </div>
 
@@ -53,6 +38,10 @@ aypi-car-tutorial                  바이브코딩 캠프 실습 저장소
 
 ## 출처
 
+<div align="center">
+<img src="https://raw.githubusercontent.com/AUTONOMOUS-PCC-Inc/.github/main/mirrors/assets/donkeycar-provenance.svg" alt="출처 사슬: autorope 업스트림 → 강사 개인 포크 → AUTONOMOUS PCC 미러 → 교육 과정 저장소. 고정 커밋은 업스트림에 같은 SHA로 존재한다" width="100%">
+</div>
+
 | 단계 | 저장소 | 비고 |
 |---|---|---|
 | 원본 | [`autorope/donkeycar`](https://github.com/autorope/donkeycar) | donkeycar 프로젝트 본체 (MIT) |
@@ -72,8 +61,13 @@ aypi-car-tutorial                  바이브코딩 캠프 실습 저장소
 
 ## 어떻게 쓰이나
 
-**AUTONOMOUS PCC 바이브코딩 캠프 1회차(자율주행)** 의 오전·오후 실습에서 `pip install -e .` 대상입니다.
-Windows + conda 환경에서 donkeycar 라이브러리를 편집 가능 모드로 설치해, 학생이 `donkey` CLI와
+**AUTONOMOUS PCC 바이브코딩 캠프 1회차(자율주행)** 하루 일정에서, 아래 여섯 단계를 전부 이 라이브러리가 떠받칩니다.
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/AUTONOMOUS-PCC-Inc/.github/main/mirrors/assets/donkeycar-pipeline.svg" alt="6단계 수업 흐름: 설치 · 차량 생성 · 데이터 수집 · 학습 · 자율주행 · 바이브코딩 과제. CPU 학습 시간 실측치 포함" width="100%">
+</div>
+
+Windows + conda 환경에서 donkeycar를 편집 가능 모드로 설치해, 학생이 `donkey` CLI와
 `manage.py drive`로 시뮬레이터를 운전하고 행동 복제 모델을 학습시킵니다.
 
 ```bash
@@ -83,6 +77,9 @@ cd <aypi-car-tutorial>/donkeycar
 pip install -e .
 donkey createcar --path ../cars/mycar
 ```
+
+3·5단계는 시뮬레이터 연결 계층이 더 필요합니다 — 자매 미러
+[`gym-donkeycar`](https://github.com/AUTONOMOUS-PCC-Inc/gym-donkeycar)를 보세요.
 
 이 저장소를 단독으로 쓸 일은 없습니다. 설치 순서·conda 환경·시뮬레이터 설정은 실습 저장소의 안내서를 따르세요.
 
