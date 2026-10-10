@@ -1,115 +1,131 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/AUTONOMOUS-PCC-Inc/.github/main/mirrors/assets/donkeycar-banner.svg" alt="donkeycar dependency mirror — pinned at d60dcb5e, 2,185 commits, behavior cloning from camera image to steering and throttle" width="100%">
+<img src="https://raw.githubusercontent.com/AUTONOMOUS-PCC-Inc/.github/main/mirrors/assets/donkeycar-banner.svg" alt="donkeycar — 수업에서 쓰는 라이브러리. 160x120 카메라 이미지에서 조향값과 속도를 내는 행동 복제" width="100%">
 
-### 교육 과정이 개인 계정에 매달리지 않도록, 그대로 복제해 둔 저장소.
+### 네 차를 움직이는 라이브러리. 이 폴더가 그거다.
 
-AUTONOMOUS PCC의 자율주행 교육 과정이 서브모듈로 **고정(pin)** 해 쓰는<br>
-[autorope/donkeycar](https://github.com/autorope/donkeycar) 미러입니다. 이 README 한 장을 제외하고 코드는 손대지 않았습니다.
+실습 저장소를 클론할 때 **같이 따라온 폴더**입니다. 따로 내려받을 필요 없습니다.<br>
+여기서 할 일은 설치 한 번뿐이고, 나머지는 안내서를 따라가면 됩니다.
 
-![Mirror](https://img.shields.io/badge/저장소-Mirror-6B7280?style=for-the-badge)
-![Upstream](https://img.shields.io/badge/Upstream-autorope%2Fdonkeycar-0B1B33?style=for-the-badge)
 ![Version](https://img.shields.io/badge/donkeycar-5.1.dev0-1E6FD9?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.9-1E6FD9?style=for-the-badge)
-![Pinned](https://img.shields.io/badge/고정커밋-d60dcb5e-16A34A?style=for-the-badge)
+![Env](https://img.shields.io/badge/conda-donkeybro-16A34A?style=for-the-badge)
+![OS](https://img.shields.io/badge/수업환경-Windows-0B1B33?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-A3A3A3?style=for-the-badge)
 
-[**왜 있나**](#왜-이-저장소가-있나) · [**출처**](#출처) · [**어떻게 쓰이나**](#어떻게-쓰이나) · [**하지 말 것**](#하지-말-것) · [**원본 문서**](#원본-문서) · [**라이선스**](#라이선스)
+[**여기서 할 일**](#여기서-할-일은-설치-한-번) · [**수업에서 어디에 쓰나**](#수업에서-어디에-쓰나) · [**용어**](#처음-보는-말들) · [**안 될 때**](#잘-안-될-때) · [**출처**](#이-저장소에-대해)
 
 </div>
 
 ---
 
-## 왜 이 저장소가 있나
+## 여기서 할 일은 설치 한 번
 
-교육용 실습 저장소가 **강사 개인 계정의 포크**를 서브모듈로 가리키고 있었습니다.
-수업 당일 학생 수십 명이 동시에 클론하는 경로가 개인 계정 하나에 걸려 있는 상태입니다.
-
-| 항목 | 내용 |
-|---|---|
-| **끊기면 수업이 멈춘다** | 개인 계정의 저장소 이름이 바뀌거나 비공개로 전환되면, 학생의 `git clone --recurse-submodules`가 그 자리에서 실패합니다. 설치 안내서 전체가 1단계에서 막힙니다. |
-| **개인 포크의 브랜치는 움직인다** | 포크 소유자가 자기 브랜치에 무엇을 올리든 그것이 그대로 교육 자료의 의존성이 됩니다. 실제로 자매 저장소 [gym-donkeycar](https://github.com/AUTONOMOUS-PCC-Inc/gym-donkeycar)에서 이 일이 일어났습니다. |
-| **조직이 책임지는 사본이 필요하다** | 교육 과정은 회사 산출물입니다. 그 의존성도 조직 계정에 있어야 보존·접근 권한을 회사가 관리할 수 있습니다. |
-
-> 그래서 코드를 바꾸지 않고 **이력 전체를 조직 계정으로 복제**했습니다.
-> 업스트림을 대체하려는 것이 아니라, **교육 과정이 붙잡고 있을 고정점**을 만들기 위한 사본입니다.
-
----
-
-## 출처
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/AUTONOMOUS-PCC-Inc/.github/main/mirrors/assets/donkeycar-provenance.svg" alt="출처 사슬: autorope 업스트림 → 강사 개인 포크 → AUTONOMOUS PCC 미러 → 교육 과정 저장소. 고정 커밋은 업스트림에 같은 SHA로 존재한다" width="100%">
-</div>
-
-| 단계 | 저장소 | 비고 |
-|---|---|---|
-| 원본 | [`autorope/donkeycar`](https://github.com/autorope/donkeycar) | donkeycar 프로젝트 본체 (MIT) |
-| 포크 | [`YUNSUNGWOONG/donkeycar`](https://github.com/YUNSUNGWOONG/donkeycar) | 강사 개인 포크 |
-| 미러 | `AUTONOMOUS-PCC-Inc/donkeycar` | 이 저장소 · 2026-10-10 `git push --mirror` |
-
-미러 푸시로 만들었기 때문에 GitHub에 **포크 배지가 표시되지 않습니다.** 이 문서가 그 출처 표기입니다.
-
-**고정 커밋 `d60dcb5e0627465851873f35e80d3b3863973fc6`** (2023-12-20, `Update setup.cfg`)은
-업스트림 `autorope/donkeycar`에 **같은 SHA로 존재하는 커밋**입니다.
-즉 교육 과정이 쓰는 코드는 개인 포크에서 수정된 것이 아니라 업스트림 원본 트리입니다.
-
-> 이 README 커밋의 **부모가 바로 그 고정 커밋**입니다.
-> `main`의 끝점은 README가 올라가며 한 커밋 앞으로 움직였지만, 서브모듈이 가리키는 SHA는 그대로입니다.
-
----
-
-## 어떻게 쓰이나
-
-**AUTONOMOUS PCC 바이브코딩 캠프 1회차(자율주행)** 하루 일정에서, 아래 여섯 단계를 전부 이 라이브러리가 떠받칩니다.
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/AUTONOMOUS-PCC-Inc/.github/main/mirrors/assets/donkeycar-pipeline.svg" alt="6단계 수업 흐름: 설치 · 차량 생성 · 데이터 수집 · 학습 · 자율주행 · 바이브코딩 과제. CPU 학습 시간 실측치 포함" width="100%">
-</div>
-
-Windows + conda 환경에서 donkeycar를 편집 가능 모드로 설치해, 학생이 `donkey` CLI와
-`manage.py drive`로 시뮬레이터를 운전하고 행동 복제 모델을 학습시킵니다.
+conda 환경 `donkeybro`를 켠 상태에서, **이 폴더 안에서** 다음을 실행합니다.
 
 ```bash
-# 실습 저장소가 이 미러를 서브모듈로 끌어온다
-git clone --recurse-submodules <aypi-car-tutorial>
-cd <aypi-car-tutorial>/donkeycar
+conda activate donkeybro
+cd donkeycar
 pip install -e .
-donkey createcar --path ../cars/mycar
 ```
 
-3·5단계는 시뮬레이터 연결 계층이 더 필요합니다 — 자매 미러
-[`gym-donkeycar`](https://github.com/AUTONOMOUS-PCC-Inc/gym-donkeycar)를 보세요.
+`-e`는 "editable", 즉 **복사해 가지 않고 이 폴더를 그대로 가리키는** 설치입니다.
+그래서 설치가 끝난 뒤에 이 폴더를 다른 데로 옮기면 깨집니다. 옮기지 마세요.
 
-이 저장소를 단독으로 쓸 일은 없습니다. 설치 순서·conda 환경·시뮬레이터 설정은 실습 저장소의 안내서를 따르세요.
+설치가 됐는지는 이걸로 확인합니다.
 
-> 실습 저장소 `aypi-car-tutorial`은 준비 중이며, 현재 고정 주체는 [`YUNSUNGWOONG/DonkeyBro`](https://github.com/YUNSUNGWOONG/DonkeyBro)입니다.
+```bash
+donkey --help
+```
+
+명령 목록이 나오면 끝입니다. 그다음은 안내서로 돌아가세요.
+
+> 설치 순서 전체·conda 환경 만들기·시뮬레이터 내려받기는 **설치 안내서**에 있습니다.
+> 이 문서는 "이 폴더가 뭐였더라" 싶을 때 보는 보조 문서입니다.
+
+---
+
+## 수업에서 어디에 쓰나
+
+하루 일정의 여섯 단계를 전부 이 라이브러리가 떠받칩니다.
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/AUTONOMOUS-PCC-Inc/.github/main/mirrors/assets/donkeycar-pipeline.svg" alt="6단계 수업 흐름: 설치 · 차량 생성 · 데이터 수집 · 학습 · 자율주행 · 바이브코딩 과제" width="100%">
+</div>
+
+핵심만 말하면 이렇습니다. **네가 시뮬레이터에서 운전한 기록을 모아서, 그걸
+흉내 내는 모델을 학습시키고, 그 모델에게 운전을 맡긴다.** 이걸 행동 복제라고 부릅니다.
+
+모델이 잘 못 달리면 그건 대개 모델이 멍청해서가 아니라 **네 운전 기록에 그 상황이
+없어서**입니다. 오후 과제가 바로 그 지점을 찾는 일입니다.
+
+3·5단계는 시뮬레이터에 붙는 계층이 하나 더 필요합니다 —
+[`gym-donkeycar`](https://github.com/AUTONOMOUS-PCC-Inc/gym-donkeycar) 폴더가 그 역할입니다.
+
+---
+
+## 처음 보는 말들
+
+| 말 | 뜻 |
+|---|---|
+| **tub** | 주행 기록 한 통. `data/` 폴더가 tub입니다. 안에 카메라 사진(`images/`)과, 사진마다 네가 준 조향값·속도가 들어 있습니다. |
+| **pilot / model** | 학습 결과물. `models/mypilot.h5` 한 파일입니다. 사진을 넣으면 조향값과 속도를 뱉습니다. |
+| **part** | 주행 루프에 끼워 넣는 부품 하나. 카메라도 part, 조이스틱도 part, 모델도 part입니다. |
+| **myconfig.py** | 네 차 설정 파일. 시뮬레이터를 쓸지, 어떤 트랙을 쓸지 여기서 정합니다. |
+| **epoch** | 학습이 데이터 전체를 한 번 훑는 것. 수십 번 반복하면서 조금씩 나아집니다. |
+
+---
+
+## 잘 안 될 때
+
+| 증상 | 원인과 해결 |
+|---|---|
+| `donkey` 명령을 찾을 수 없다 | 십중팔구 **conda 환경을 안 켰습니다**. `conda activate donkeybro` 먼저. 환경을 켰는데도 안 되면, 설치한 뒤에 이 폴더를 옮기지 않았는지 보세요 (editable 설치라 경로가 바뀌면 깨집니다). 옮겼다면 `pip install -e .`를 다시 돌리면 됩니다. |
+| `Could not load dynamic library 'cudart64_110.dll'` 가 아홉 줄쯤 뜬다 | **정상입니다.** GPU가 없어서 TensorFlow가 CPU로 돌겠다고 알리는 것뿐입니다. 학습도 주행도 그대로 됩니다. 인터넷에 "opencv를 지우면 된다"는 글이 있는데 **따르지 마세요** — 원인이 다릅니다. |
+| 학습이 끝날 기미가 없다 | 원래 오래 걸립니다. 노트북 CPU에서 몇천 장이면 수십 분입니다. 시작해 놓고 **건드리지 말고** 기다리세요. 중간에 창을 닫으면 처음부터입니다. |
+| 폴더가 텅 비어 있다 | 서브모듈을 안 받은 것입니다. 실습 저장소 맨 위에서 `git submodule update --init --recursive`. |
+| 시뮬레이터에 연결이 안 된다 | 이 폴더 문제가 아닙니다. [`gym-donkeycar`](https://github.com/AUTONOMOUS-PCC-Inc/gym-donkeycar) 쪽 안내를 보세요. |
+
+그래도 안 되면 **에러 메시지 전체를 복사해서** 강사에게 보여 주세요.
+마지막 줄만 보면 원인을 못 찾는 경우가 많습니다.
 
 ---
 
 ## 하지 말 것
 
-- **이 저장소에 이슈·PR을 올리지 마세요.** 코드 문제는 업스트림 [autorope/donkeycar](https://github.com/autorope/donkeycar/issues)로 가야 합니다. 여기는 사본입니다.
-- **`git submodule update --remote`를 쓰지 마세요.** 고정된 SHA를 버리고 브랜치 끝점을 따라갑니다. 교육 과정에서는 항상 아래를 씁니다.
-
-```bash
-git submodule update --init --recursive   # 고정된 SHA를 체크아웃 (안전)
-```
+- **`git submodule update --remote` 금지.** 수업이 고정해 둔 버전을 버리고 최신으로 끌어옵니다. 항상 `git submodule update --init --recursive` 를 쓰세요.
+- **이 저장소에 이슈·PR 금지.** 여기는 수업용 사본입니다. 라이브러리 자체의 문제는 원본 [autorope/donkeycar](https://github.com/autorope/donkeycar/issues)로 가야 합니다.
+- **설치 후 폴더 이동 금지.** 위에 적은 이유로 깨집니다.
 
 ---
 
-## 원본 문서
+## 이 저장소에 대해
 
-업스트림 README는 **고정 커밋 시점 그대로** 아래에 남아 있습니다.
+[autorope/donkeycar](https://github.com/autorope/donkeycar)를 **그대로 복제한 사본**입니다.
+수업이 개인 계정에 의존하지 않도록 회사 조직 계정에 두었습니다. 이 README 한 장
+말고는 코드를 손대지 않았고, 수업이 쓰는 커밋은 원본에 **같은 SHA로 존재하는**
+커밋이라 네가 설치하는 건 원본 코드 그대로입니다.
 
-- [README.md @ `d60dcb5e`](https://github.com/AUTONOMOUS-PCC-Inc/donkeycar/blob/d60dcb5e0627465851873f35e80d3b3863973fc6/README.md)
-- 공식 문서 · [docs.donkeycar.com](https://docs.donkeycar.com)
+<div align="center">
+<img src="https://raw.githubusercontent.com/AUTONOMOUS-PCC-Inc/.github/main/mirrors/assets/donkeycar-provenance.svg" alt="출처 사슬: autorope 원본 → 개인 포크 → AUTONOMOUS PCC 미러 → 실습 저장소" width="100%">
+</div>
 
----
+| 단계 | 저장소 |
+|---|---|
+| 원본 | [`autorope/donkeycar`](https://github.com/autorope/donkeycar) |
+| 포크 | [`YUNSUNGWOONG/donkeycar`](https://github.com/YUNSUNGWOONG/donkeycar) |
+| 사본 | `AUTONOMOUS-PCC-Inc/donkeycar` · 2026-10-10 `git push --mirror` |
 
-## 라이선스
+고정 커밋은 `d60dcb5e0627465851873f35e80d3b3863973fc6` (2023-12-20)입니다.
+미러 푸시라 GitHub에 포크 배지가 안 붙으므로, 이 절이 출처 표기입니다.
 
-업스트림과 동일한 **MIT License**입니다. 원 저작권 표기를 그대로 보존했습니다.
+**원본 README**는 그 커밋 시점 그대로
+[여기](https://github.com/AUTONOMOUS-PCC-Inc/donkeycar/blob/d60dcb5e0627465851873f35e80d3b3863973fc6/README.md)에
+남아 있고, 공식 문서는 [docs.donkeycar.com](https://docs.donkeycar.com)입니다.
+
+### 라이선스
+
+원본과 같은 **MIT License**이고 원 저작권 표기를 그대로 보존했습니다.
 
 ```
 MIT License
@@ -117,11 +133,11 @@ MIT License
 Copyright (c) 2017 Will Roscoe
 ```
 
-전문은 [`LICENSE`](LICENSE)를 보세요. 이 미러는 저작권자를 바꾸지 않으며, 재배포 사본으로서 원 고지를 유지합니다.
+전문은 [`LICENSE`](LICENSE)에 있습니다.
 
 ---
 
 <div align="center">
-<sub><strong>AUTONOMOUS PCC, Inc.</strong> · (주)오토노머스피씨씨 — 교육 과정 의존성 미러</sub><br>
-<sub>조직 소개 · <a href="https://github.com/AUTONOMOUS-PCC-Inc">github.com/AUTONOMOUS-PCC-Inc</a></sub>
+<sub><strong>AUTONOMOUS PCC, Inc.</strong> · (주)오토노머스피씨씨 — 바이브코딩 캠프 1회차 실습용</sub><br>
+<sub><a href="https://github.com/AUTONOMOUS-PCC-Inc">github.com/AUTONOMOUS-PCC-Inc</a></sub>
 </div>
