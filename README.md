@@ -9,7 +9,7 @@
 
 ![Version](https://img.shields.io/badge/donkeycar-5.1.dev0-1E6FD9?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.9-1E6FD9?style=for-the-badge)
-![Env](https://img.shields.io/badge/conda-donkeybro-16A34A?style=for-the-badge)
+![Env](https://img.shields.io/badge/conda-aypi--car-16A34A?style=for-the-badge)
 ![OS](https://img.shields.io/badge/수업환경-Windows-0B1B33?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-A3A3A3?style=for-the-badge)
 
@@ -21,10 +21,10 @@
 
 ## 여기서 할 일은 설치 한 번
 
-conda 환경 `donkeybro`를 켠 상태에서, **이 폴더 안에서** 다음을 실행합니다.
+conda 환경 `aypi-car`를 켠 상태에서, **이 폴더 안에서** 다음을 실행합니다.
 
 ```bash
-conda activate donkeybro
+conda activate aypi-car
 cd donkeycar
 pip install -e .
 ```
@@ -81,7 +81,7 @@ donkey --help
 
 | 증상 | 원인과 해결 |
 |---|---|
-| `donkey` 명령을 찾을 수 없다 | 십중팔구 **conda 환경을 안 켰습니다**. `conda activate donkeybro` 먼저. 환경을 켰는데도 안 되면, 설치한 뒤에 이 폴더를 옮기지 않았는지 보세요 (editable 설치라 경로가 바뀌면 깨집니다). 옮겼다면 `pip install -e .`를 다시 돌리면 됩니다. |
+| `donkey` 명령을 찾을 수 없다 | 십중팔구 **conda 환경을 안 켰습니다**. `conda activate aypi-car` 먼저. 환경을 켰는데도 안 되면, 설치한 뒤에 이 폴더를 옮기지 않았는지 보세요 (editable 설치라 경로가 바뀌면 깨집니다). 옮겼다면 `pip install -e .`를 다시 돌리면 됩니다. |
 | `Could not load dynamic library 'cudart64_110.dll'` 가 아홉 줄쯤 뜬다 | **정상입니다.** GPU가 없어서 TensorFlow가 CPU로 돌겠다고 알리는 것뿐입니다. 학습도 주행도 그대로 됩니다. 인터넷에 "opencv를 지우면 된다"는 글이 있는데 **따르지 마세요** — 원인이 다릅니다. |
 | 학습이 끝날 기미가 없다 | 원래 오래 걸립니다. 노트북 CPU에서 몇천 장이면 수십 분입니다. 시작해 놓고 **건드리지 말고** 기다리세요. 중간에 창을 닫으면 처음부터입니다. |
 | 폴더가 텅 비어 있다 | 서브모듈을 안 받은 것입니다. [실습 저장소](https://github.com/AUTONOMOUS-PCC-Inc/aypi-car-tutorial) 맨 위에서 `git submodule update --init --recursive`. |
